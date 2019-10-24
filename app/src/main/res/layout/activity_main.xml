@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20px"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@android:dimen/app_icon_size"
+        android:text="Ramal App" />
+
+    <EditText
+        android:id="@+id/txtNamaLengkap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nama Lengkap"
+        android:inputType="text"
+        android:padding="20dp" />
+
+    <EditText
+        android:id="@+id/txtTanggalLahir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:clickable="true"
+        android:editable="false"
+        android:hint="Tanggal Lahir"
+        android:padding="20dp" />
+
+    <Button
+        android:id="@+id/btnRamal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ramal" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        android:text="Dea Anggi Rahmawati" />
+</LinearLayout>
