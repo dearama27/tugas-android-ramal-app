@@ -3,19 +3,14 @@ package com.dea.zodiakapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
-
-import java.io.InterruptedIOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 
 public class RamalActivity extends AppCompatActivity {
 
     TextView textRamalan;
     TextView txtNamalengkap;
     TextView txtJudul;
+    TextView txtTanggalLahir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +22,14 @@ public class RamalActivity extends AppCompatActivity {
         textRamalan     = findViewById(R.id.textRamal);
         txtNamalengkap  = findViewById(R.id.txtNamalengkap);
         txtJudul        = findViewById(R.id.txtJudul);
+        txtTanggalLahir = findViewById(R.id.txtTanggalLahir);
 
         String tglStr   = intent.getStringExtra(MainActivity.TGL_STR);
         String nama     = intent.getStringExtra(MainActivity.NAMA);
 
-        txtNamalengkap.setText("Nama : "+nama);
+
+        txtNamalengkap.setText(nama);
+        txtTanggalLahir.setText(tglStr);
 
 
         String[] tglAplit = tglStr.split("-");

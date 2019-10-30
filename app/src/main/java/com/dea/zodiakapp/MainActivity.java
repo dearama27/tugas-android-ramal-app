@@ -1,24 +1,20 @@
 package com.dea.zodiakapp;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import org.json.JSONArray;
-
-import java.lang.reflect.Array;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,10 +53,24 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                String value = txtTanggalLahir.getText().toString();
-                Log.d("Log", value);
+                String tanggalLahir= txtTanggalLahir.getText().toString();
+                String namaLengkap = txtNamaLengkap.getText().toString();
+                Log.d("Log", namaLengkap);
+                if(!TextUtils.isEmpty(tanggalLahir)) {
+                    openHasil(tanggalLahir, namaLengkap);
+                } else {
+                    new AlertDialog.Builder(MainActivity.this)
+                            .setTitle("Error")
+                            .setMessage("Nama Lengkap dan Tanggal Lahir Wajib diisi.")
+                            .setCancelable(false)
+                            .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // Whatever...
+                                }
+                            }).show();
+                }
 
-                openHasil(value, txtNamaLengkap.getText().toString());
             }
         });
     }
